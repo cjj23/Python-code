@@ -94,15 +94,15 @@ def encodeCategoricalData(data):
 # Importing the dataset
 
 #A: COLAB - Run following files:
-#from google.colab import files
-#import io
-#import pandas as pd   
-#uploaded = files.upload()
-#data = io.BytesIO(uploaded['breast-cancer.xls']) 
-#dataset = pd.read_excel(data , sheet_name = 'breast-cancer', header = 0, skiprows = 2)
+from google.colab import files
+import io
+import pandas as pd   
+uploaded = files.upload()
+data = io.BytesIO(uploaded['breast-cancer.xls']) 
+dataset = pd.read_excel(data , sheet_name = 'breast-cancer', header = 0, skiprows = 2)
 
 #B: Not in COLAB - use the below line to load the file directly:
-dataset = pd.read_excel('breast-cancer.xls', 'breast-cancer')
+#dataset = pd.read_excel('breast-cancer.xls', 'breast-cancer')
 
 X = dataset.iloc[:, 0:9].values
 y = dataset.iloc[:, 9].values
